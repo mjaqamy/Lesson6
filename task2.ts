@@ -26,3 +26,15 @@ const user4: User = {
   name: "Vlad",
   age: () => 23,
 };
+
+const compareObjects = (object1: User, object2: User) => {
+  for (const key1 in object1) {
+    if (object1[key1 as keyof User] !== object2[key1 as keyof User]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+console.log(compareObjects(user1, user2));
