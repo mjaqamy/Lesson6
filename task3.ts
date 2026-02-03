@@ -16,8 +16,15 @@ const userAnalyzer = {
       activeUsers: 0,
     };
 
-    //твой код
-
+    for (const user of this.users) {
+      result.total++;
+      if (user.age >= 18) {
+        result.adults++;
+      }
+      if (user.isActive) {
+        result.activeUsers++;
+      }
+    }
     return result;
   },
 };
